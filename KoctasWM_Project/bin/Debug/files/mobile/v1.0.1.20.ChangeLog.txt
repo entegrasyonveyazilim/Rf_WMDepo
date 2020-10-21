@@ -1,0 +1,3 @@
+v.2.0.0.2
+---------------------------------------
+- Bütün formlardan text dosyasına log basılması için kod yazıldı. Loglu versiyondur.

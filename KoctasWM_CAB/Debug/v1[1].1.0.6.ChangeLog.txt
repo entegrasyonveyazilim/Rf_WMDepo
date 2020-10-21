@@ -1,0 +1,53 @@
+v.2.0.0.16
+---------------------------------------
+- Mal giris çikis islemleri düzenlendi. 
+
+v.2.0.0.15
+---------------------------------------
+- E-irsaliye canlý geçiþine(requestlerin taþýnmasý) uygun hale getirildi. Web servisleri güncellendi. 
+
+
+v.2.0.0.14
+---------------------------------------
+- Mal kabulden iade formunda satýcý kontrolü kaldýrýldý.
+
+v.2.0.0.13
+---------------------------------------
+- Satis ekranlarindaki tarih hatasý duzeltildi.
+
+v.2.0.0.12
+---------------------------------------
+- Satis ekranlarina indirimli tutar alanÄ± eklendi
+- Urun Kontrol ekranÄ±na parolu indirimli fiyat alanÄ± eklendi
+- WS_Satis WSDL'i yenilenmesinden ve SAP Update sonrasi yenilenen saat alani degeri datetime olarak alinarak string'e cevirilerek gosterim saglandi
+
+
+v.2.0.0.11
+---------------------------------------
+- WS_Login webservisine eklenen MAGNET kontrolunun uygulanmasi.
+Bu sayede MAGNET kullanilan magazalar SAP tarafinda tanimlanarak ilgili ekran kontrolu saglanmaktadir.
+
+ v.2.0.0.10
+---------------------------------------
+- Ayni malzeme numarasina sahip kalemlerin toplama tablosuna eklenirken yasanan
+sorun icin ayri satirda gosterim yerine tek satirda gosterim yontemi uygulandi.
+- Dev Test 2 Baglanti Sunucusu Eklendi
+
+
+ v.2.0.0.9
+---------------------------------------
+- Ayni malzeme numarasina sahip kalemlerin toplama tablosuna eklenirken yasanan
+sorun giderildi.
+
+ v.2.0.0.8
+---------------------------------------
+- WS yapi degisikliginden dolayi WS linki update edildi.
+
+
+ v.2.0.0.7
+---------------------------------------
+- Stok Islemleri/Urun Haz. ve Teslimat ekrani Kartal Magaza icin pilot uygulama olarak duzenlendi.
+- Urun Teslimat ekranlarÄ±nda, Tamamlanan ve Eksik urun secenekleri forma eklendi
+- Eksik urun secilmesi durumunda RED NEDENI listesinden secim yapilmasi zorunlu hale getirildi.
+- Hizmet kalemleri icin toplama zorunlulugu kaldirildi, hizmet kalemleri otomatik olarak toplama listesine eklenir hale getirildi.
+- Login WS yapisina, login olan kullanicinin magaza bilgisi eklendi.

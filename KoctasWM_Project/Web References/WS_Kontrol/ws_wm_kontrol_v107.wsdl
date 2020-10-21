@@ -1,0 +1,3226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:n1="urn:sap-com:document:sap:rfc:functions" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl" />
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="BN__ZKT_WM_WS_KONTROL">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedMimeSerialization xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+        <wsp:All xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+          <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+            <wsp:Policy>
+              <sp:TransportToken>
+                <wsp:Policy>
+                  <sp:HttpsToken>
+                    <wsp:Policy>
+                      <sp:HttpBasicAuthentication />
+                    </wsp:Policy>
+                  </sp:HttpsToken>
+                </wsp:Policy>
+              </sp:TransportToken>
+              <sp:AlgorithmSuite>
+                <wsp:Policy>
+                  <sp:Basic128Rsa15 />
+                </wsp:Policy>
+              </sp:AlgorithmSuite>
+              <sp:Layout>
+                <wsp:Policy>
+                  <sp:Strict />
+                </wsp:Policy>
+              </sp:Layout>
+            </wsp:Policy>
+          </sp:TransportBinding>
+        </wsp:All>
+      </wsp:All>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+        <wsp:All xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+          <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+            <wsp:Policy>
+              <sp:TransportToken>
+                <wsp:Policy>
+                  <sp:HttpsToken>
+                    <wsp:Policy>
+                      <sp:HttpBasicAuthentication />
+                    </wsp:Policy>
+                  </sp:HttpsToken>
+                </wsp:Policy>
+              </sp:TransportToken>
+              <sp:AlgorithmSuite>
+                <wsp:Policy>
+                  <sp:Basic128Rsa15 />
+                </wsp:Policy>
+              </sp:AlgorithmSuite>
+              <sp:Layout>
+                <wsp:Policy>
+                  <sp:Strict />
+                </wsp:Policy>
+              </sp:Layout>
+            </wsp:Policy>
+          </sp:TransportBinding>
+        </wsp:All>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BN__ZKT_WM_WS_KONTROL_soap12">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedMimeSerialization xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+        <wsp:All xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+          <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+            <wsp:Policy>
+              <sp:TransportToken>
+                <wsp:Policy>
+                  <sp:HttpsToken>
+                    <wsp:Policy>
+                      <sp:HttpBasicAuthentication />
+                    </wsp:Policy>
+                  </sp:HttpsToken>
+                </wsp:Policy>
+              </sp:TransportToken>
+              <sp:AlgorithmSuite>
+                <wsp:Policy>
+                  <sp:Basic128Rsa15 />
+                </wsp:Policy>
+              </sp:AlgorithmSuite>
+              <sp:Layout>
+                <wsp:Policy>
+                  <sp:Strict />
+                </wsp:Policy>
+              </sp:Layout>
+            </wsp:Policy>
+          </sp:TransportBinding>
+        </wsp:All>
+      </wsp:All>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+        <wsp:All xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+          <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+            <wsp:Policy>
+              <sp:TransportToken>
+                <wsp:Policy>
+                  <sp:HttpsToken>
+                    <wsp:Policy>
+                      <sp:HttpBasicAuthentication />
+                    </wsp:Policy>
+                  </sp:HttpsToken>
+                </wsp:Policy>
+              </sp:TransportToken>
+              <sp:AlgorithmSuite>
+                <wsp:Policy>
+                  <sp:Basic128Rsa15 />
+                </wsp:Policy>
+              </sp:AlgorithmSuite>
+              <sp:Layout>
+                <wsp:Policy>
+                  <sp:Strict />
+                </wsp:Policy>
+              </sp:Layout>
+            </wsp:Policy>
+          </sp:TransportBinding>
+        </wsp:All>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF__ZKT_WM_WS_KONTROL">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+          <sapsession:enableSession>false</sapsession:enableSession>
+        </sapsession:Session>
+        <sapcentraladmin:CentralAdministration xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/" wsp:Optional="true">
+          <sapcentraladmin:BusinessApplicationID>0050569975641ED787D61E8972C4C684</sapcentraladmin:BusinessApplicationID>
+        </sapcentraladmin:CentralAdministration>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsSetUrunuKontrolu">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsPaletSorgu">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsPaletKontrolAll">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsMalFatAtfKontrol">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsKuyrukListe">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsAdresSorgu">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsSetTasimaKontrolu">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsMgCheckSas">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsCikisMatnrKontrol">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsAmbalajKontArac">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmSayimMalzemeKontrol">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmSayimAdresOner">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsSayimAdresOner">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsRampaOnay">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsPaletKontrol">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsIadeMlzKontrolu">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsGetSevkiyatNo">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsAmbalajKontMlz">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsWebsipno">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsUrunSorgu">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsSayimMlzKontrol">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsAmbalajKontAdres">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmSayimPaletKontrol">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsYetkiKontrolu">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsRampaKontrol">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsYuklemeMalKontrol">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsWebsipno2">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsSayimKullaniciSec">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsManToplamaNaksip">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsMalzemeKontrolu">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsIkmalNakilKontrol">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsToplamaLockCoz">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsTeslimatDagitim">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsKuyruk">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsCikisPaletKontrol">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsCikisAdresKontrol">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsAmbalajKontKoli">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsTopIpMlzKontrolu">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsSevkiyatSiparis">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsPaletKontrolGiris">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsPaletKontrol06">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsPaletKontrol05">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsCikisPaletKont2">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsAtfInfo">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZKtWmWsToplamaNaksip">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char100">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="100" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char15">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="15" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char16">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="16" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char220">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="220" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char30">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="30" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char35">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="35" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char40">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="40" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char50">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="50" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char9">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="9" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="clnt3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="curr11.2">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="11" />
+          <xsd:fractionDigits value="2" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="date10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+          <xsd:pattern value="\d\d\d\d-\d\d-\d\d" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="decimal5.0">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="5" />
+          <xsd:fractionDigits value="0" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="decimal9.3">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="9" />
+          <xsd:fractionDigits value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric5">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="5" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="quantum13.3">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="13" />
+          <xsd:fractionDigits value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="time">
+        <xsd:restriction base="xsd:time">
+          <xsd:pattern value="[0-9]{2}:[0-9]{2}:[0-9]{2}" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="unit3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema xmlns:n0="urn:sap-com:document:sap:rfc:functions" attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions" />
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="quantum15.3">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="15" />
+          <xsd:fractionDigits value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ZktWmReturn">
+        <xsd:sequence>
+          <xsd:element name="Msgty" type="n0:char1" />
+          <xsd:element name="Msgid" type="n0:char20" />
+          <xsd:element name="Msgno" type="n0:numeric3" />
+          <xsd:element name="Message" type="n0:char220" />
+          <xsd:element name="Msgv1" type="n0:char50" />
+          <xsd:element name="Msgv2" type="n0:char50" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZktWmStok">
+        <xsd:sequence>
+          <xsd:element name="Matnr" type="n0:char18" />
+          <xsd:element name="Ean" type="n0:char18" />
+          <xsd:element name="Maktx" type="n0:char40" />
+          <xsd:element name="Lgtyp" type="n0:char3" />
+          <xsd:element name="Lgpla" type="n0:char10" />
+          <xsd:element name="Miktar" type="n0:quantum13.3" />
+          <xsd:element name="EmirliMiktar" type="n0:quantum13.3" />
+          <xsd:element name="Meins" type="n0:unit3" />
+          <xsd:element name="Bestq" type="n0:char1" />
+          <xsd:element name="Lenum" type="n0:char20" />
+          <xsd:element name="HedefAdres" type="n0:char10" />
+          <xsd:element name="HedefPalet" type="n0:char20" />
+          <xsd:element name="OnerilenAdres" type="n0:char10" />
+          <xsd:element name="OnerilenPalet" type="n0:char20" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZktWmVwSayim">
+        <xsd:sequence>
+          <xsd:element name="Mandt" type="n0:clnt3" />
+          <xsd:element name="Lgnum" type="n0:char3" />
+          <xsd:element name="Ivnum" type="n0:char10" />
+          <xsd:element name="Ivpos" type="n0:numeric4" />
+          <xsd:element name="Istat" type="n0:char1" />
+          <xsd:element name="Lgpla" type="n0:char10" />
+          <xsd:element name="Lqnum" type="n0:numeric10" />
+          <xsd:element name="Nanum" type="n0:numeric2" />
+          <xsd:element name="LinpIstat" type="n0:char1" />
+          <xsd:element name="LinvIstat" type="n0:char1" />
+          <xsd:element name="Lgtyp" type="n0:char3" />
+          <xsd:element name="Matnr" type="n0:char18" />
+          <xsd:element name="Werks" type="n0:char4" />
+          <xsd:element name="Charg" type="n0:char10" />
+          <xsd:element name="Letyp" type="n0:char3" />
+          <xsd:element name="Anzle" type="n0:decimal9.3" />
+          <xsd:element name="Menge" type="n0:quantum13.3" />
+          <xsd:element name="Meins" type="n0:unit3" />
+          <xsd:element name="Menga" type="n0:quantum13.3" />
+          <xsd:element name="Altme" type="n0:unit3" />
+          <xsd:element name="Gesme" type="n0:quantum13.3" />
+          <xsd:element name="Tanum" type="n0:numeric10" />
+          <xsd:element name="Tapos" type="n0:numeric4" />
+          <xsd:element name="Lenum" type="n0:char20" />
+          <xsd:element name="Maktx" type="n0:char40" />
+          <xsd:element name="Sobkz" type="n0:char1" />
+          <xsd:element name="Sonum" type="n0:char16" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZktWmStAmbalaj">
+        <xsd:sequence>
+          <xsd:element name="DagitimAdresi" type="n0:char15" />
+          <xsd:element name="Vbeln" type="n0:char10" />
+          <xsd:element name="Posnr" type="n0:numeric6" />
+          <xsd:element name="Matnr" type="n0:char18" />
+          <xsd:element name="Maktx" type="n0:char40" />
+          <xsd:element name="Lfimg" type="n0:quantum13.3" />
+          <xsd:element name="Meins" type="n0:unit3" />
+          <xsd:element name="Kostk" type="n0:char1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZkmobilReturn">
+        <xsd:sequence>
+          <xsd:element name="RcCode" type="n0:char1" />
+          <xsd:element name="RcText" type="n0:char100" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZkmobilMatlist">
+        <xsd:sequence>
+          <xsd:element name="Ebeln" type="n0:char18" />
+          <xsd:element name="Matnr" type="n0:char18" />
+          <xsd:element name="Meins" type="n0:unit3" />
+          <xsd:element name="Menge" type="n0:quantum13.3" />
+          <xsd:element name="Maktx" type="n0:char40" />
+          <xsd:element name="Werks" type="n0:char4" />
+          <xsd:element name="Ebelp" type="n0:numeric5" />
+          <xsd:element name="Lgort" type="n0:char4" />
+          <xsd:element name="Ean11" type="n0:char18" />
+          <xsd:element name="Ean112" type="n0:char18" />
+          <xsd:element name="Amenge" type="n0:quantum13.3" />
+          <xsd:element name="Lmein" type="n0:unit3" />
+          <xsd:element name="Umrez" type="n0:decimal5.0" />
+          <xsd:element name="Umren" type="n0:decimal5.0" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZktWmStKuyruk">
+        <xsd:sequence>
+          <xsd:element name="Lgnum" type="n0:char3" />
+          <xsd:element name="Queue" type="n0:char10" />
+          <xsd:element name="Qutxt" type="n0:char40" />
+          <xsd:element name="Naksip" type="n0:numeric6" />
+          <xsd:element name="Refnr" type="n0:char10" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZktWmStTeslimat">
+        <xsd:sequence>
+          <xsd:element name="Vbeln" type="n0:char10" />
+          <xsd:element name="VbelnVf" type="n0:char10" />
+          <xsd:element name="Lfart" type="n0:char4" />
+          <xsd:element name="Kunnr" type="n0:char10" />
+          <xsd:element name="Name1" type="n0:char30" />
+          <xsd:element name="Posnr" type="n0:numeric6" />
+          <xsd:element name="Lfimg" type="n0:quantum13.3" />
+          <xsd:element name="Menge" type="n0:quantum13.3" />
+          <xsd:element name="Meins" type="n0:unit3" />
+          <xsd:element name="Matnr" type="n0:char18" />
+          <xsd:element name="Maktx" type="n0:char40" />
+          <xsd:element name="DagitimAdresi" type="n0:char15" />
+          <xsd:element name="Wbstk" type="n0:char1" />
+          <xsd:element name="Augru" type="n0:char3" />
+          <xsd:element name="VbelnVf2" type="n0:char10" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZktWmStNaksip">
+        <xsd:sequence>
+          <xsd:element name="Tanum" type="n0:numeric10" />
+          <xsd:element name="Tapos" type="n0:numeric4" />
+          <xsd:element name="Matnr" type="n0:char18" />
+          <xsd:element name="Nlenr" type="n0:char20" />
+          <xsd:element name="Vlenr" type="n0:char20" />
+          <xsd:element name="Maktx" type="n0:char40" />
+          <xsd:element name="Bestq" type="n0:char1" />
+          <xsd:element name="Meins" type="n0:unit3" />
+          <xsd:element name="Vsolm" type="n0:quantum13.3" />
+          <xsd:element name="Refnr" type="n0:char10" />
+          <xsd:element name="Queue" type="n0:char10" />
+          <xsd:element name="Vlpla" type="n0:char10" />
+          <xsd:element name="Vltyp" type="n0:char3" />
+          <xsd:element name="Nltyp" type="n0:char3" />
+          <xsd:element name="Nlpla" type="n0:char10" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZktWmStAtfHeader">
+        <xsd:sequence>
+          <xsd:element name="Desi" type="n0:quantum13.3" />
+          <xsd:element name="Kargocu" type="n0:char10" />
+          <xsd:element name="Bstkd" type="n0:char35" />
+          <xsd:element name="BstkdE" type="n0:char35" />
+          <xsd:element name="Meins" type="n0:unit3" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZmbSevkiyatHrz">
+        <xsd:sequence>
+          <xsd:element name="Sevkno" type="n0:char10" />
+          <xsd:element name="Ebeln" type="n0:char10" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZmbSevkiyatHrzDty">
+        <xsd:sequence>
+          <xsd:element name="Ebeln" type="n0:char10" />
+          <xsd:element name="Ebelp" type="n0:numeric5" />
+          <xsd:element name="Matnr" type="n0:char18" />
+          <xsd:element name="Smenge" type="n0:quantum13.3" />
+          <xsd:element name="Amenge" type="n0:quantum13.3" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZktWmStWebsipno2RfcExp">
+        <xsd:sequence>
+          <xsd:element name="Vbeln" type="n0:char10" />
+          <xsd:element name="Posnr" type="tns:numeric6" />
+          <xsd:element name="Matnr" type="n0:char18" />
+          <xsd:element name="Kwmeng" type="tns:quantum15.3" />
+          <xsd:element name="Meins" type="n0:unit3" />
+          <xsd:element name="Kargo" type="n0:char1" />
+          <xsd:element name="Iadetip" type="n0:char1" />
+          <xsd:element name="Kmenge" type="n0:quantum13.3" />
+          <xsd:element name="Durum" type="n0:char1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZktWmKargo">
+        <xsd:sequence>
+          <xsd:element name="Mandt" type="n0:clnt3" />
+          <xsd:element name="KoliNo" type="n0:char15" />
+          <xsd:element name="VbelnVl" type="n0:char10" />
+          <xsd:element name="Posnr" type="n0:numeric6" />
+          <xsd:element name="Matnr" type="n0:char18" />
+          <xsd:element name="Lfimg" type="n0:quantum13.3" />
+          <xsd:element name="Menge" type="n0:quantum13.3" />
+          <xsd:element name="KoliTipi" type="n0:char3" />
+          <xsd:element name="Desi" type="n0:quantum13.3" />
+          <xsd:element name="Kargocu" type="n0:char10" />
+          <xsd:element name="VbelnVf" type="n0:char10" />
+          <xsd:element name="KoliTamamTrh" type="n0:date10" />
+          <xsd:element name="KoliTamamSaat" type="n0:time" />
+          <xsd:element name="KoliTamamUsr" type="n0:char12" />
+          <xsd:element name="KargoTeslim" type="n0:char1" />
+          <xsd:element name="KargoTesTrh" type="n0:date10" />
+          <xsd:element name="KargoTesSaat" type="n0:time" />
+          <xsd:element name="KargoTesUsr" type="n0:char12" />
+          <xsd:element name="Lgnum" type="n0:char3" />
+          <xsd:element name="SevkiyatNo" type="n0:char10" />
+          <xsd:element name="SevkiyatTar" type="n0:date10" />
+          <xsd:element name="SevkiyatSaat" type="n0:time" />
+          <xsd:element name="SevkiyatUsr" type="n0:char12" />
+          <xsd:element name="Meins" type="n0:unit3" />
+          <xsd:element name="KargoHakPo" type="n0:char10" />
+          <xsd:element name="Kunnr" type="n0:char10" />
+          <xsd:element name="DsFlag" type="tns:char1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZktWmStRampa">
+        <xsd:sequence>
+          <xsd:element name="Vbeln" type="n0:char10" />
+          <xsd:element name="Posnr" type="n0:numeric6" />
+          <xsd:element name="DagitimAdresi" type="n0:char15" />
+          <xsd:element name="Lfart" type="n0:char4" />
+          <xsd:element name="Kunnr" type="n0:char10" />
+          <xsd:element name="Name1" type="n0:char30" />
+          <xsd:element name="Kostk" type="n0:char1" />
+          <xsd:element name="Matnr" type="n0:char18" />
+          <xsd:element name="Maktx" type="n0:char40" />
+          <xsd:element name="LfimgTeslimat" type="n0:quantum13.3" />
+          <xsd:element name="Meins" type="n0:unit3" />
+          <xsd:element name="KoliNo" type="n0:char15" />
+          <xsd:element name="Menge" type="n0:quantum13.3" />
+          <xsd:element name="Kosta" type="n0:char1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZktWmStUrunAyrinti">
+        <xsd:sequence>
+          <xsd:element name="Matnr" type="n0:char18" />
+          <xsd:element name="Maktx" type="n0:char40" />
+          <xsd:element name="Lifnr" type="n0:char10" />
+          <xsd:element name="Name1" type="n0:char30" />
+          <xsd:element name="Matkl" type="n0:char9" />
+          <xsd:element name="Wgbez" type="n0:char20" />
+          <xsd:element name="Gesme" type="n0:quantum13.3" />
+          <xsd:element name="Verme" type="n0:quantum13.3" />
+          <xsd:element name="Bloke" type="n0:quantum13.3" />
+          <xsd:element name="Meins" type="n0:unit3" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZktWmWebsid">
+        <xsd:sequence>
+          <xsd:element name="Websid" type="n0:char15" />
+          <xsd:element name="Websip" type="n0:char20" />
+          <xsd:element name="Webklm" type="n0:numeric6" />
+          <xsd:element name="Matnr" type="n0:char18" />
+          <xsd:element name="Menge" type="n0:quantum13.3" />
+          <xsd:element name="Meins" type="n0:unit3" />
+          <xsd:element name="Vbelns" type="n0:char10" />
+          <xsd:element name="Aciklama" type="n0:char100" />
+          <xsd:element name="Webuid" type="n0:char10" />
+          <xsd:element name="Kargo" type="n0:char1" />
+          <xsd:element name="Webkrgt" type="n0:curr11.2" />
+          <xsd:element name="Kmenge" type="n0:quantum13.3" />
+          <xsd:element name="Dmenge" type="n0:quantum13.3" />
+          <xsd:element name="Iadetip" type="n0:char1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZktWmTtReturn">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZktWmReturn" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZktWmTtSayim">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZktWmVwSayim" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZktWmTtAmbalaj">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZktWmStAmbalaj" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfZkmobilReturn">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZkmobilReturn" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfZkmobilMatlist">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZkmobilMatlist" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZktWmTtStok">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZktWmStok" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZktWmTtKuyruk">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZktWmStKuyruk" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfZmbSevkiyatHrz">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZmbSevkiyatHrz" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfZmbSevkiyatHrzDty">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZmbSevkiyatHrzDty" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZktWmTtWebsipno2RfcExp">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZktWmStWebsipno2RfcExp" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZktWmTtKargo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZktWmKargo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZktWmTtRampa">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZktWmStRampa" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfZktWmWebsid">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZktWmWebsid" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZKtWmWsAmbalajKontMlz">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvKoliNo" type="n0:char15" />
+            <xsd:element name="IvVbeln" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsAmbalajKontMlzResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsGetSevkiyatNo">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsGetSevkiyatNoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EvSevkiyatNo" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsIadeMlzKontrolu">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvEan" type="n0:char18" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsIadeMlzKontroluResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EsStok" type="tns:ZktWmStok" />
+            <xsd:element name="EvMatnr" type="n0:char18" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsPaletKontrol">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvLenum" type="n0:char20" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsPaletKontrolResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EsStok" type="tns:ZktWmStok" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsRampaOnay">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="IvDagAdres" type="n0:char15" />
+            <xsd:element minOccurs="0" name="IvKoliNo" type="n0:char15" />
+            <xsd:element minOccurs="0" name="IvMiktar" type="n0:quantum13.3" />
+            <xsd:element minOccurs="0" name="IvPosnr" type="n0:numeric6" />
+            <xsd:element minOccurs="0" name="IvVbelnVl" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsRampaOnayResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsSayimAdresOner">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="IvLgpla" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsSayimAdresOnerResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmSayimAdresOner">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmSayimAdresOnerResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EvLenvw" type="n0:char1" />
+            <xsd:element name="EvLgpla" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmSayimMalzemeKontrol">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvEan" type="n0:char18" />
+            <xsd:element name="IvLgpla" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmSayimMalzemeKontrolResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EtLinv" type="tns:ZktWmTtSayim" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsAmbalajKontArac">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvDagarac" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsAmbalajKontAracResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EtAmbalaj" type="tns:ZktWmTtAmbalaj" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsCikisMatnrKontrol">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvEan" type="n0:char18" />
+            <xsd:element name="IvLgpla" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsCikisMatnrKontrolResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EsStok" type="tns:ZktWmStok" />
+            <xsd:element name="EvMatnr" type="n0:char18" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsMgCheckSas">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="IEbeln" type="n0:char10" />
+            <xsd:element minOccurs="0" name="TeMatlist" type="tns:TableOfZkmobilMatlist" />
+            <xsd:element minOccurs="0" name="TeReturn" type="tns:TableOfZkmobilReturn" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsMgCheckSasResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ExType1" type="n0:char1" />
+            <xsd:element minOccurs="0" name="TeMatlist" type="tns:TableOfZkmobilMatlist" />
+            <xsd:element minOccurs="0" name="TeReturn" type="tns:TableOfZkmobilReturn" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsSetTasimaKontrolu">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvEan" type="n0:char18" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsSetTasimaKontroluResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EsStok" type="tns:ZktWmStok" />
+            <xsd:element name="EvMatnr" type="n0:char18" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsAdresSorgu">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvLgpla" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsAdresSorguResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EsStok" type="tns:ZktWmTtStok" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsKuyrukListe">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvType" type="n0:char1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsKuyrukListeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EtKuyruk" type="tns:ZktWmTtKuyruk" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsMalFatAtfKontrol">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvKoliNo" type="n0:char15" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsMalFatAtfKontrolResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EsTeslimat" type="tns:ZktWmStTeslimat" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsPaletKontrolAll">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvLenum" type="n0:char20" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsPaletKontrolAllResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EsStok" type="tns:ZktWmStok" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsPaletSorgu">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvLenum" type="n0:char20" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsPaletSorguResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EsStok" type="tns:ZktWmStok" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsSetUrunuKontrolu">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvEan" type="n0:char18" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsSetUrunuKontroluResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EsStok" type="tns:ZktWmStok" />
+            <xsd:element name="EvMatnr" type="n0:char18" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsToplamaNaksip">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvType" type="n0:char1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsToplamaNaksipResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="IsNaksip" type="tns:ZktWmStNaksip" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsAtfInfo">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="IvKoliNo" type="n0:char15" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsAtfInfoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsAtfHeader" type="tns:ZktWmStAtfHeader" />
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsCikisPaletKont2">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvLenum" type="n0:char20" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsCikisPaletKont2Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EsStok" type="tns:ZktWmStok" />
+            <xsd:element name="EvKostl" type="n0:char10" />
+            <xsd:element name="EvPrctr" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsPaletKontrol05">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvLenum" type="n0:char20" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsPaletKontrol05Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EsStok" type="tns:ZktWmStok" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsPaletKontrol06">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvLenum" type="n0:char20" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsPaletKontrol06Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EsStok" type="tns:ZktWmStok" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsPaletKontrolGiris">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvLenum" type="n0:char20" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsPaletKontrolGirisResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EsStok" type="tns:ZktWmStok" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsSevkiyatSiparis">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="ImDetay" type="n0:char1" />
+            <xsd:element minOccurs="0" name="ImSevkno" type="n0:char10" />
+            <xsd:element minOccurs="0" name="ItDetay" type="tns:TableOfZmbSevkiyatHrzDty" />
+            <xsd:element minOccurs="0" name="ItSevkiyat" type="tns:TableOfZmbSevkiyatHrz" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsSevkiyatSiparisResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="ItDetay" type="tns:TableOfZmbSevkiyatHrzDty" />
+            <xsd:element minOccurs="0" name="ItSevkiyat" type="tns:TableOfZmbSevkiyatHrz" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsTopIpMlzKontrolu">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvEan" type="n0:char18" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsTopIpMlzKontroluResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EsStok" type="tns:ZktWmStok" />
+            <xsd:element name="EvMatnr" type="n0:char18" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsAmbalajKontKoli">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvEan" type="n0:char18" />
+            <xsd:element name="IvVbeln" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsAmbalajKontKoliResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsCikisAdresKontrol">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvLgpla" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsCikisAdresKontrolResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EsStok" type="tns:ZktWmTtStok" />
+            <xsd:element name="EvLenvw" type="n0:char1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsCikisPaletKontrol">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvLenum" type="n0:char20" />
+            <xsd:element name="IvLgpla" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsCikisPaletKontrolResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EsStok" type="tns:ZktWmStok" />
+            <xsd:element name="EvKostl" type="n0:char10" />
+            <xsd:element name="EvPrctr" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsKuyruk">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsKuyrukResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsKuyruk" type="tns:ZktWmStKuyruk" />
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsTeslimatDagitim">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="IvEan" type="n0:char18" />
+            <xsd:element name="IvType" type="n0:char1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsTeslimatDagitimResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EsTeslimat" type="tns:ZktWmStTeslimat" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsToplamaLockCoz">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsToplamaLockCozResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsIkmalNakilKontrol">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsIkmalNakilKontrolResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsNaksip" type="tns:ZktWmStNaksip" />
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsMalzemeKontrolu">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvEan" type="n0:char18" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsMalzemeKontroluResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EsStok" type="tns:ZktWmStok" />
+            <xsd:element name="EvMatnr" type="n0:char18" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsManToplamaNaksip">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="IvTanum" type="n0:numeric10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsManToplamaNaksipResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="IsNaksip" type="tns:ZktWmStNaksip" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsSayimKullaniciSec">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="IvLgpla" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsSayimKullaniciSecResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EvLenvw" type="n0:char1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsWebsipno2">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvVbeln" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsWebsipno2Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EtTable" type="tns:ZktWmTtWebsipno2RfcExp" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsYuklemeMalKontrol">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="IvKoliNo" type="n0:char15" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsYuklemeMalKontrolResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EtCargo" type="tns:ZktWmTtKargo" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsRampaKontrol">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="IvDagadres" type="n0:char15" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsRampaKontrolResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EtRampa" type="tns:ZktWmTtRampa" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsYetkiKontrolu">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="IvForm" type="n0:char20" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsYetkiKontroluResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmSayimPaletKontrol">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvLenum" type="n0:char20" />
+            <xsd:element name="IvLgpla" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmSayimPaletKontrolResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsLinv" type="tns:ZktWmVwSayim" />
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsAmbalajKontAdres">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvDagadres" type="n0:char15" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsAmbalajKontAdresResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EtAmbalaj" type="tns:ZktWmTtAmbalaj" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsSayimMlzKontrol">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="IvEan" type="n0:char18" />
+            <xsd:element minOccurs="0" name="IvLenum" type="n0:char20" />
+            <xsd:element name="IvLgpla" type="n0:char10" />
+            <xsd:element name="IvMiktar" type="n0:quantum13.3" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsSayimMlzKontrolResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EvSayimMevcut" type="n0:char1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsUrunSorgu">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvEan" type="n0:char18" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsUrunSorguResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element name="EsUrunAyrinti" type="tns:ZktWmStUrunAyrinti" />
+            <xsd:element name="EtStok" type="tns:ZktWmTtStok" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsWebsipno">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="ItWebsid" type="tns:TableOfZktWmWebsid" />
+            <xsd:element name="LvWebsid" type="n0:char15" />
+            <xsd:element name="LvWebsip" type="n0:char20" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZKtWmWsWebsipnoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsResponse" type="tns:ZktWmTtReturn" />
+            <xsd:element minOccurs="0" name="ItWebsid" type="tns:TableOfZktWmWebsid" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZKtWmWsAmbalajKontMlz">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsAmbalajKontMlz" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsAmbalajKontMlzResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsAmbalajKontMlzResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsGetSevkiyatNo">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsGetSevkiyatNo" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsGetSevkiyatNoResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsGetSevkiyatNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsIadeMlzKontrolu">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsIadeMlzKontrolu" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsIadeMlzKontroluResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsIadeMlzKontroluResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsPaletKontrol">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsPaletKontrol" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsPaletKontrolResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsPaletKontrolResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsRampaOnay">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsRampaOnay" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsRampaOnayResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsRampaOnayResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsSayimAdresOner">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsSayimAdresOner" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsSayimAdresOnerResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsSayimAdresOnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmSayimAdresOner">
+    <wsdl:part name="parameters" element="tns:ZKtWmSayimAdresOner" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmSayimAdresOnerResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmSayimAdresOnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmSayimMalzemeKontrol">
+    <wsdl:part name="parameters" element="tns:ZKtWmSayimMalzemeKontrol" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmSayimMalzemeKontrolResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmSayimMalzemeKontrolResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsAmbalajKontArac">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsAmbalajKontArac" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsAmbalajKontAracResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsAmbalajKontAracResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsCikisMatnrKontrol">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsCikisMatnrKontrol" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsCikisMatnrKontrolResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsCikisMatnrKontrolResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsMgCheckSas">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsMgCheckSas" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsMgCheckSasResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsMgCheckSasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsSetTasimaKontrolu">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsSetTasimaKontrolu" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsSetTasimaKontroluResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsSetTasimaKontroluResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsAdresSorgu">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsAdresSorgu" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsAdresSorguResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsAdresSorguResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsKuyrukListe">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsKuyrukListe" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsKuyrukListeResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsKuyrukListeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsMalFatAtfKontrol">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsMalFatAtfKontrol" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsMalFatAtfKontrolResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsMalFatAtfKontrolResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsPaletKontrolAll">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsPaletKontrolAll" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsPaletKontrolAllResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsPaletKontrolAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsPaletSorgu">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsPaletSorgu" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsPaletSorguResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsPaletSorguResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsSetUrunuKontrolu">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsSetUrunuKontrolu" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsSetUrunuKontroluResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsSetUrunuKontroluResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsToplamaNaksip">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsToplamaNaksip" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsToplamaNaksipResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsToplamaNaksipResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsAtfInfo">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsAtfInfo" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsAtfInfoResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsAtfInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsCikisPaletKont2">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsCikisPaletKont2" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsCikisPaletKont2Response">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsCikisPaletKont2Response" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsPaletKontrol05">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsPaletKontrol05" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsPaletKontrol05Response">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsPaletKontrol05Response" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsPaletKontrol06">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsPaletKontrol06" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsPaletKontrol06Response">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsPaletKontrol06Response" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsPaletKontrolGiris">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsPaletKontrolGiris" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsPaletKontrolGirisResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsPaletKontrolGirisResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsSevkiyatSiparis">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsSevkiyatSiparis" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsSevkiyatSiparisResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsSevkiyatSiparisResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsTopIpMlzKontrolu">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsTopIpMlzKontrolu" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsTopIpMlzKontroluResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsTopIpMlzKontroluResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsAmbalajKontKoli">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsAmbalajKontKoli" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsAmbalajKontKoliResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsAmbalajKontKoliResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsCikisAdresKontrol">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsCikisAdresKontrol" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsCikisAdresKontrolResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsCikisAdresKontrolResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsCikisPaletKontrol">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsCikisPaletKontrol" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsCikisPaletKontrolResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsCikisPaletKontrolResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsKuyruk">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsKuyruk" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsKuyrukResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsKuyrukResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsTeslimatDagitim">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsTeslimatDagitim" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsTeslimatDagitimResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsTeslimatDagitimResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsToplamaLockCoz">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsToplamaLockCoz" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsToplamaLockCozResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsToplamaLockCozResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsIkmalNakilKontrol">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsIkmalNakilKontrol" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsIkmalNakilKontrolResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsIkmalNakilKontrolResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsMalzemeKontrolu">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsMalzemeKontrolu" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsMalzemeKontroluResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsMalzemeKontroluResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsManToplamaNaksip">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsManToplamaNaksip" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsManToplamaNaksipResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsManToplamaNaksipResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsSayimKullaniciSec">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsSayimKullaniciSec" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsSayimKullaniciSecResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsSayimKullaniciSecResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsWebsipno2">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsWebsipno2" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsWebsipno2Response">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsWebsipno2Response" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsYuklemeMalKontrol">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsYuklemeMalKontrol" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsYuklemeMalKontrolResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsYuklemeMalKontrolResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsRampaKontrol">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsRampaKontrol" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsRampaKontrolResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsRampaKontrolResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsYetkiKontrolu">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsYetkiKontrolu" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsYetkiKontroluResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsYetkiKontroluResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmSayimPaletKontrol">
+    <wsdl:part name="parameters" element="tns:ZKtWmSayimPaletKontrol" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmSayimPaletKontrolResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmSayimPaletKontrolResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsAmbalajKontAdres">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsAmbalajKontAdres" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsAmbalajKontAdresResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsAmbalajKontAdresResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsSayimMlzKontrol">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsSayimMlzKontrol" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsSayimMlzKontrolResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsSayimMlzKontrolResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsUrunSorgu">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsUrunSorgu" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsUrunSorguResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsUrunSorguResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsWebsipno">
+    <wsdl:part name="parameters" element="tns:ZKtWmWsWebsipno" />
+  </wsdl:message>
+  <wsdl:message name="ZKtWmWsWebsipnoResponse">
+    <wsdl:part name="parameter" element="tns:ZKtWmWsWebsipnoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ZKT_WM_WS_KONTROL">
+    <wsdl:documentation>
+      <sapdoc:sapdoc xmlns:sapdoc="urn:sap:esi:documentation">
+        <sapdoc:docitem docURL="http://kterpdev.koctas.com.tr:8000/sap/bc/esdt/docu/sd_text?sap-client=500&amp;sd_name=ZKT_WM_WS_KONTROL" />
+      </sapdoc:sapdoc>
+    </wsdl:documentation>
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF__ZKT_WM_WS_KONTROL" />
+    </wsp:Policy>
+    <wsdl:operation name="ZKtWmWsAmbalajKontMlz">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsAmbalajKontMlz" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsAmbalajKontMlz" />
+      <wsdl:output message="tns:ZKtWmWsAmbalajKontMlzResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsGetSevkiyatNo">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsGetSevkiyatNo" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsGetSevkiyatNo" />
+      <wsdl:output message="tns:ZKtWmWsGetSevkiyatNoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsIadeMlzKontrolu">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsIadeMlzKontrolu" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsIadeMlzKontrolu" />
+      <wsdl:output message="tns:ZKtWmWsIadeMlzKontroluResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsPaletKontrol">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsPaletKontrol" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsPaletKontrol" />
+      <wsdl:output message="tns:ZKtWmWsPaletKontrolResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsRampaOnay">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsRampaOnay" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsRampaOnay" />
+      <wsdl:output message="tns:ZKtWmWsRampaOnayResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsSayimAdresOner">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsSayimAdresOner" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsSayimAdresOner" />
+      <wsdl:output message="tns:ZKtWmWsSayimAdresOnerResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmSayimAdresOner">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmSayimAdresOner" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmSayimAdresOner" />
+      <wsdl:output message="tns:ZKtWmSayimAdresOnerResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmSayimMalzemeKontrol">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmSayimMalzemeKontrol" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmSayimMalzemeKontrol" />
+      <wsdl:output message="tns:ZKtWmSayimMalzemeKontrolResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsAmbalajKontArac">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsAmbalajKontArac" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsAmbalajKontArac" />
+      <wsdl:output message="tns:ZKtWmWsAmbalajKontAracResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsCikisMatnrKontrol">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsCikisMatnrKontrol" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsCikisMatnrKontrol" />
+      <wsdl:output message="tns:ZKtWmWsCikisMatnrKontrolResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsMgCheckSas">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsMgCheckSas" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsMgCheckSas" />
+      <wsdl:output message="tns:ZKtWmWsMgCheckSasResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsSetTasimaKontrolu">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsSetTasimaKontrolu" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsSetTasimaKontrolu" />
+      <wsdl:output message="tns:ZKtWmWsSetTasimaKontroluResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsAdresSorgu">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsAdresSorgu" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsAdresSorgu" />
+      <wsdl:output message="tns:ZKtWmWsAdresSorguResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsKuyrukListe">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsKuyrukListe" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsKuyrukListe" />
+      <wsdl:output message="tns:ZKtWmWsKuyrukListeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsMalFatAtfKontrol">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsMalFatAtfKontrol" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsMalFatAtfKontrol" />
+      <wsdl:output message="tns:ZKtWmWsMalFatAtfKontrolResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsPaletKontrolAll">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsPaletKontrolAll" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsPaletKontrolAll" />
+      <wsdl:output message="tns:ZKtWmWsPaletKontrolAllResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsPaletSorgu">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsPaletSorgu" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsPaletSorgu" />
+      <wsdl:output message="tns:ZKtWmWsPaletSorguResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsSetUrunuKontrolu">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsSetUrunuKontrolu" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsSetUrunuKontrolu" />
+      <wsdl:output message="tns:ZKtWmWsSetUrunuKontroluResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsToplamaNaksip">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsToplamaNaksip" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsToplamaNaksip" />
+      <wsdl:output message="tns:ZKtWmWsToplamaNaksipResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsAtfInfo">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsAtfInfo" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsAtfInfo" />
+      <wsdl:output message="tns:ZKtWmWsAtfInfoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsCikisPaletKont2">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsCikisPaletKont2" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsCikisPaletKont2" />
+      <wsdl:output message="tns:ZKtWmWsCikisPaletKont2Response" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsPaletKontrol05">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsPaletKontrol05" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsPaletKontrol05" />
+      <wsdl:output message="tns:ZKtWmWsPaletKontrol05Response" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsPaletKontrol06">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsPaletKontrol06" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsPaletKontrol06" />
+      <wsdl:output message="tns:ZKtWmWsPaletKontrol06Response" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsPaletKontrolGiris">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsPaletKontrolGiris" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsPaletKontrolGiris" />
+      <wsdl:output message="tns:ZKtWmWsPaletKontrolGirisResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsSevkiyatSiparis">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsSevkiyatSiparis" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsSevkiyatSiparis" />
+      <wsdl:output message="tns:ZKtWmWsSevkiyatSiparisResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsTopIpMlzKontrolu">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsTopIpMlzKontrolu" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsTopIpMlzKontrolu" />
+      <wsdl:output message="tns:ZKtWmWsTopIpMlzKontroluResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsAmbalajKontKoli">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsAmbalajKontKoli" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsAmbalajKontKoli" />
+      <wsdl:output message="tns:ZKtWmWsAmbalajKontKoliResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsCikisAdresKontrol">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsCikisAdresKontrol" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsCikisAdresKontrol" />
+      <wsdl:output message="tns:ZKtWmWsCikisAdresKontrolResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsCikisPaletKontrol">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsCikisPaletKontrol" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsCikisPaletKontrol" />
+      <wsdl:output message="tns:ZKtWmWsCikisPaletKontrolResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsKuyruk">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsKuyruk" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsKuyruk" />
+      <wsdl:output message="tns:ZKtWmWsKuyrukResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsTeslimatDagitim">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsTeslimatDagitim" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsTeslimatDagitim" />
+      <wsdl:output message="tns:ZKtWmWsTeslimatDagitimResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsToplamaLockCoz">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsToplamaLockCoz" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsToplamaLockCoz" />
+      <wsdl:output message="tns:ZKtWmWsToplamaLockCozResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsIkmalNakilKontrol">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsIkmalNakilKontrol" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsIkmalNakilKontrol" />
+      <wsdl:output message="tns:ZKtWmWsIkmalNakilKontrolResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsMalzemeKontrolu">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsMalzemeKontrolu" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsMalzemeKontrolu" />
+      <wsdl:output message="tns:ZKtWmWsMalzemeKontroluResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsManToplamaNaksip">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsManToplamaNaksip" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsManToplamaNaksip" />
+      <wsdl:output message="tns:ZKtWmWsManToplamaNaksipResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsSayimKullaniciSec">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsSayimKullaniciSec" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsSayimKullaniciSec" />
+      <wsdl:output message="tns:ZKtWmWsSayimKullaniciSecResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsWebsipno2">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsWebsipno2" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsWebsipno2" />
+      <wsdl:output message="tns:ZKtWmWsWebsipno2Response" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsYuklemeMalKontrol">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsYuklemeMalKontrol" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsYuklemeMalKontrol" />
+      <wsdl:output message="tns:ZKtWmWsYuklemeMalKontrolResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsRampaKontrol">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsRampaKontrol" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsRampaKontrol" />
+      <wsdl:output message="tns:ZKtWmWsRampaKontrolResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsYetkiKontrolu">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsYetkiKontrolu" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsYetkiKontrolu" />
+      <wsdl:output message="tns:ZKtWmWsYetkiKontroluResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmSayimPaletKontrol">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmSayimPaletKontrol" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmSayimPaletKontrol" />
+      <wsdl:output message="tns:ZKtWmSayimPaletKontrolResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsAmbalajKontAdres">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsAmbalajKontAdres" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsAmbalajKontAdres" />
+      <wsdl:output message="tns:ZKtWmWsAmbalajKontAdresResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsSayimMlzKontrol">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsSayimMlzKontrol" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsSayimMlzKontrol" />
+      <wsdl:output message="tns:ZKtWmWsSayimMlzKontrolResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsUrunSorgu">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsUrunSorgu" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsUrunSorgu" />
+      <wsdl:output message="tns:ZKtWmWsUrunSorguResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsWebsipno">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZKtWmWsWebsipno" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZKtWmWsWebsipno" />
+      <wsdl:output message="tns:ZKtWmWsWebsipnoResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZKT_WM_WS_KONTROL" type="tns:ZKT_WM_WS_KONTROL">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__ZKT_WM_WS_KONTROL" />
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZKtWmWsAmbalajKontMlz">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsAmbalajKontMlzRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsGetSevkiyatNo">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsGetSevkiyatNoRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsIadeMlzKontrolu">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsIadeMlzKontroluRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsPaletKontrol">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsPaletKontrolRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsRampaOnay">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsRampaOnayRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsSayimAdresOner">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsSayimAdresOnerRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmSayimAdresOner">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmSayimAdresOnerRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmSayimMalzemeKontrol">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmSayimMalzemeKontrolRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsAmbalajKontArac">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsAmbalajKontAracRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsCikisMatnrKontrol">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsCikisMatnrKontrolRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsMgCheckSas">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsMgCheckSasRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsSetTasimaKontrolu">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsSetTasimaKontroluRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsAdresSorgu">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsAdresSorguRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsKuyrukListe">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsKuyrukListeRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsMalFatAtfKontrol">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsMalFatAtfKontrolRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsPaletKontrolAll">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsPaletKontrolAllRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsPaletSorgu">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsPaletSorguRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsSetUrunuKontrolu">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsSetUrunuKontroluRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsToplamaNaksip">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsToplamaNaksipRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsAtfInfo">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsAtfInfoRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsCikisPaletKont2">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsCikisPaletKont2Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsPaletKontrol05">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsPaletKontrol05Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsPaletKontrol06">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsPaletKontrol06Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsPaletKontrolGiris">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsPaletKontrolGirisRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsSevkiyatSiparis">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsSevkiyatSiparisRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsTopIpMlzKontrolu">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsTopIpMlzKontroluRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsAmbalajKontKoli">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsAmbalajKontKoliRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsCikisAdresKontrol">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsCikisAdresKontrolRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsCikisPaletKontrol">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsCikisPaletKontrolRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsKuyruk">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsKuyrukRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsTeslimatDagitim">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsTeslimatDagitimRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsToplamaLockCoz">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsToplamaLockCozRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsIkmalNakilKontrol">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsIkmalNakilKontrolRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsMalzemeKontrolu">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsMalzemeKontroluRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsManToplamaNaksip">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsManToplamaNaksipRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsSayimKullaniciSec">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsSayimKullaniciSecRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsWebsipno2">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsWebsipno2Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsYuklemeMalKontrol">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsYuklemeMalKontrolRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsRampaKontrol">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsRampaKontrolRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsYetkiKontrolu">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsYetkiKontroluRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmSayimPaletKontrol">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmSayimPaletKontrolRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsAmbalajKontAdres">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsAmbalajKontAdresRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsSayimMlzKontrol">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsSayimMlzKontrolRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsUrunSorgu">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsUrunSorguRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsWebsipno">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsWebsipnoRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ZKT_WM_WS_KONTROL_soap12" type="tns:ZKT_WM_WS_KONTROL">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__ZKT_WM_WS_KONTROL_soap12" />
+    </wsp:Policy>
+    <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZKtWmWsAmbalajKontMlz">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsAmbalajKontMlzRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsGetSevkiyatNo">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsGetSevkiyatNoRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsIadeMlzKontrolu">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsIadeMlzKontroluRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsPaletKontrol">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsPaletKontrolRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsRampaOnay">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsRampaOnayRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsSayimAdresOner">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsSayimAdresOnerRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmSayimAdresOner">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmSayimAdresOnerRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmSayimMalzemeKontrol">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmSayimMalzemeKontrolRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsAmbalajKontArac">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsAmbalajKontAracRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsCikisMatnrKontrol">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsCikisMatnrKontrolRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsMgCheckSas">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsMgCheckSasRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsSetTasimaKontrolu">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsSetTasimaKontroluRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsAdresSorgu">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsAdresSorguRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsKuyrukListe">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsKuyrukListeRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsMalFatAtfKontrol">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsMalFatAtfKontrolRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsPaletKontrolAll">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsPaletKontrolAllRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsPaletSorgu">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsPaletSorguRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsSetUrunuKontrolu">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsSetUrunuKontroluRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsToplamaNaksip">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsToplamaNaksipRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsAtfInfo">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsAtfInfoRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsCikisPaletKont2">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsCikisPaletKont2Request" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsPaletKontrol05">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsPaletKontrol05Request" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsPaletKontrol06">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsPaletKontrol06Request" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsPaletKontrolGiris">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsPaletKontrolGirisRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsSevkiyatSiparis">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsSevkiyatSiparisRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsTopIpMlzKontrolu">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsTopIpMlzKontroluRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsAmbalajKontKoli">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsAmbalajKontKoliRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsCikisAdresKontrol">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsCikisAdresKontrolRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsCikisPaletKontrol">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsCikisPaletKontrolRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsKuyruk">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsKuyrukRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsTeslimatDagitim">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsTeslimatDagitimRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsToplamaLockCoz">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsToplamaLockCozRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsIkmalNakilKontrol">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsIkmalNakilKontrolRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsMalzemeKontrolu">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsMalzemeKontroluRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsManToplamaNaksip">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsManToplamaNaksipRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsSayimKullaniciSec">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsSayimKullaniciSecRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsWebsipno2">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsWebsipno2Request" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsYuklemeMalKontrol">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsYuklemeMalKontrolRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsRampaKontrol">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsRampaKontrolRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsYetkiKontrolu">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsYetkiKontroluRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmSayimPaletKontrol">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmSayimPaletKontrolRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsAmbalajKontAdres">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsAmbalajKontAdresRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsSayimMlzKontrol">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsSayimMlzKontrolRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsUrunSorgu">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsUrunSorguRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKtWmWsWebsipno">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZKT_WM_WS_KONTROL:ZKtWmWsWebsipnoRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZKT_WM_WS_KONTROLSERVICE">
+    <wsdl:port name="ZKT_WM_WS_KONTROL" binding="tns:ZKT_WM_WS_KONTROL">
+      <soap:address location="http://kterpdev.koctas.com.tr:8000/sap/bc/srt/rfc/sap/zkt_wm_ws_kontrol/500/zkt_wm_ws_kontrolservice/zkt_wm_ws_kontrol" />
+    </wsdl:port>
+    <wsdl:port name="ZKT_WM_WS_KONTROL_soap12" binding="tns:ZKT_WM_WS_KONTROL_soap12">
+      <wsoap12:address location="http://kterpdev.koctas.com.tr:8000/sap/bc/srt/rfc/sap/zkt_wm_ws_kontrol/500/zkt_wm_ws_kontrolservice/zkt_wm_ws_kontrol" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
